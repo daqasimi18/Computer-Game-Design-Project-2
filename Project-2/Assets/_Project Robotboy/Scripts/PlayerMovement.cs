@@ -51,7 +51,15 @@ public class PlayerMovement : MonoBehaviour
 	
 	void SetCountText()
 	{
-		countText.text = "Count: " + count.ToString() + "/" + collectCount.ToString();
+		if (count<10)
+		{
+			countText.text = "Count:  " + count.ToString() + "/" + collectCount.ToString();
+			//adds extra space to compensate for missing digit
+		}
+		else //if count is greater than or equal to 10
+		{
+			countText.text = "Count: " + count.ToString() + "/" + collectCount.ToString();
+		}
 		if (count>=collectCount)
 		{
 			winTextObject.SetActive(true);
