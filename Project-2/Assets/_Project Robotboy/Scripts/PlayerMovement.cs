@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
 {
 	public float speed;
 	public float rotationSpeed;
+	public float jumpSpeed;
 
 	private CharacterController characterController;
+	private float ySpeed;
 	//lines borrowed from Roll-a-Ball tutorial
 	private int count;
 	public GameObject CollectParent;
@@ -39,7 +41,19 @@ public class PlayerMovement : MonoBehaviour
 		float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
 		movementDirection.Normalize();
 		
-		characterController.SimpleMove(movementDirection * magnitude);
+		ySpeed += Physics.gravity.y * Time.deltaTime;
+
+		if (Input.GetButtonDown("Jump"))
+		{
+			ySpeed = jumpSpeed;
+		}
+
+		Vector3 velocity = movementDirection * magnitude;
+		velocity.y = ySpeed;
+
+
+
+		characterController.Move(velocity * Time.deltaTime);
 		
 		if(movementDirection != Vector3.zero)
 		{
