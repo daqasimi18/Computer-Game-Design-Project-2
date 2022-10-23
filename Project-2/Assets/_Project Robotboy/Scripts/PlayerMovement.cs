@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 	public float speed;
 	public float rotationSpeed;
 	public float jumpSpeed;
+	private float originalStepOffset;
 
 	private CharacterController characterController;
 	private float ySpeed;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        originalStepOffset = characterController.stepOffset;
 		
 		//lines borrowed from Roll-a-Ball tutorial
 		count = 0;
@@ -43,10 +45,22 @@ public class PlayerMovement : MonoBehaviour
 		
 		ySpeed += Physics.gravity.y * Time.deltaTime;
 
-		if (Input.GetButtonDown("Jump"))
+		if (characterController.isGrounded)
+		{
+			characterController.stepOffset = originalStepOffset;
+			ySpeed = -0.5f;
+
+			if (Input.GetButtonDown("Jump"))
 		{
 			ySpeed = jumpSpeed;
 		}
+		}
+		else
+		{
+			characterController.stepOffset = 0;
+		}
+
+		
 
 		Vector3 velocity = movementDirection * magnitude;
 		velocity.y = ySpeed;
