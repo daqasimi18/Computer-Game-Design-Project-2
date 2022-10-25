@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 	private int collectCount;
 	public TextMeshProUGUI countText;
 	public GameObject winTextObject;
+	public GameObject endTextObject;
 	
     // Start is called before the first frame update
     void Start()
@@ -74,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
 			Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 			
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+		}
+		
+		if (transform.position.y < -100)
+		{
+			endTextObject.SetActive(true);
 		}
     }
 	
