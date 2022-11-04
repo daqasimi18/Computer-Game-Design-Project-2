@@ -6,7 +6,8 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float speed;
+	public float normalSpeed;
+	public float fastSpeed;
 	public float rotationSpeed;
 	public float jumpSpeed;
 	private float originalStepOffset;
@@ -37,15 +38,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		float speed = 0;
+		
         float horizontalInput = Input.GetAxis("Horizontal");
 		float verticalInput = Input.GetAxis("Vertical");
 		
 		Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
 		if (Input.GetKey(KeyCode.P)){
-			speed = 20;
+			speed = fastSpeed;
 		}
 		else {
-			speed = 5;
+			speed = normalSpeed;
 		}
 		float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
 		movementDirection.Normalize();
