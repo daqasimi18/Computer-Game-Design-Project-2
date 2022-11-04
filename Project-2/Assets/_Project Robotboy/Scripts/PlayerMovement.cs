@@ -41,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
 		float verticalInput = Input.GetAxis("Vertical");
 		
 		Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+		if (Input.GetKey(KeyCode.P)){
+			speed = 20;
+		}
+		else {
+			speed = 5;
+		}
 		float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
 		movementDirection.Normalize();
 		
