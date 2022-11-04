@@ -70,7 +70,8 @@ public class PlayerMovement : MonoBehaviour
 		
 
 		Vector3 velocity = movementDirection * magnitude;
-		velocity.y = ySpeed;
+		velocity = AdjustVelocityToSlope(velocity);
+		velocity.y += ySpeed;
 
 
 
@@ -116,5 +117,20 @@ public class PlayerMovement : MonoBehaviour
 			count += 1;
 			SetCountText();
 		}
+	}
+	private Vector3 AdjustVelocityToSlope(Vector3 velocity)
+	{
+		var ray = new Ray(transform.position, Vector3.down);
+		if (Physics.Raycast(ray, out RaycastHit hitInfo, 0.2f))
+		{
+			var slopeRoatation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+			var adjustedVelocity = slopeRoatation * velocity;
+			if (adjustedVelocity.y < 0)
+			{
+				return adjustedVelocity;
+			}
+		}
+
+		return velocity;
 	}
 }
