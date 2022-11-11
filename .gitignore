@@ -79,3 +79,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Project-2/connectwebgl.zip
+Project-2/Assets/Astra/Docs.meta
+Project-2/Assets/Astra/Examples/Animation/AnimatingAnAvatar.cs.meta
