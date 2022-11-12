@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 202606171}
   - component: {fileID: 202606173}
   - component: {fileID: 202606172}
+  - component: {fileID: 202606174}
   m_Layer: 5
   m_Name: TutorialBg
   m_TagString: Untagged
@@ -1037,6 +1038,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202606170}
   m_CullTransparentMesh: 1
+--- !u!114 &202606174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202606170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9185b402f86860d43b9323d6cb47bb89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloseButton: {fileID: 65684467}
 --- !u!1001 &217002144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,7 +1612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e39e696715e3f4d8c8c4f7a1345e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraToggle: {fileID: 399981458}
+  CameraToggle: {fileID: 399981456}
 --- !u!1 &416842893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,7 +3042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close
+  m_text: Close (Enter)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
