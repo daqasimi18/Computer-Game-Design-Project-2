@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject winTextObject;
 	public GameObject endTextObject;
 	
+	public Transform cameraTransform;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 			speed = normalSpeed;
 		}
 		float magnitude = Mathf.Clamp01(movementDirection.magnitude) * speed;
+		movementDirection = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * movementDirection;
 		movementDirection.Normalize();
 		
 		ySpeed += Physics.gravity.y * Time.deltaTime;
