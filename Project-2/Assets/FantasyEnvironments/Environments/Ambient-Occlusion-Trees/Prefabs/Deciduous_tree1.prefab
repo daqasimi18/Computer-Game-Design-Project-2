@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2795318547083434876}
   - component: {fileID: 2795318547080567644}
   - component: {fileID: 2795318547081664924}
-  - component: {fileID: 6945451009273880201}
+  - component: {fileID: -8407698633126834467}
   m_Layer: 0
   m_Name: Deciduous_tree1
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6945451009273880201
+--- !u!136 &-8407698633126834467
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
