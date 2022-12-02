@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		//lines borrowed from Roll-a-Ball tutorial
 		count = 0;
-		collectCount = CollectParent.transform.childCount;
+		collectCount = 40; //CollectParent.transform.childCount;
 		SetCountText();
 		winTextObject.SetActive(false);
     }
