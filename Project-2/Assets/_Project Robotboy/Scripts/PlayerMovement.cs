@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 	public TextMeshProUGUI countText;
 	public GameObject winTextObject;
 	public GameObject endTextObject;
+	public AudioSource collectCoinSound;
 	
 	public Transform cameraTransform;
 	
@@ -120,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
 		if (other.gameObject.CompareTag("Collect"))
 		{
 			other.gameObject.SetActive(false);
+			collectCoinSound.Play();
 			count += 1;
 			SetCountText();
 		}
