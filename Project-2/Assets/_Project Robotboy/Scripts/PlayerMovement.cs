@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject winTextObject;
 	public GameObject endTextObject;
 	public AudioSource collectCoinSound;
+	public AudioSource slimeJumpSound;
 	
 	public Transform cameraTransform;
 	
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 			if (Input.GetButtonDown("Jump"))
 		{
 			ySpeed = jumpSpeed;
+			slimeJumpSound.Play();
 		}
 		}
 		else
