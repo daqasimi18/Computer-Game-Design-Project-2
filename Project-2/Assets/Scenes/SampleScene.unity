@@ -5489,7 +5489,7 @@ MonoBehaviour:
   rotationSpeed: 50
   jumpSpeed: 5
   CollectParent: {fileID: 57954652}
-  countToCollect: 1
+  countToCollect: 40
   countText: {fileID: 2126508343}
   winText: {fileID: 798323309}
   winTextObject: {fileID: 1960661698}
