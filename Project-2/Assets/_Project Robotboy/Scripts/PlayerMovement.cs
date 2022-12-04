@@ -18,7 +18,10 @@ public class PlayerMovement : MonoBehaviour
 	private int count;
 	public GameObject CollectParent;
 	private int collectCount;
+	private int collectNumber;
+	public int countToCollect;
 	public TextMeshProUGUI countText;
+	public TextMeshProUGUI winText;
 	public GameObject winTextObject;
 	public GameObject endTextObject;
 	public AudioSource collectCoinSound;
@@ -34,7 +37,8 @@ public class PlayerMovement : MonoBehaviour
 		
 		//lines borrowed from Roll-a-Ball tutorial
 		count = 0;
-		collectCount = 40; //CollectParent.transform.childCount;
+		collectCount = countToCollect; //CollectParent.transform.childCount;
+		collectNumber = CollectParent.transform.childCount;
 		SetCountText();
 		winTextObject.SetActive(false);
     }
@@ -113,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
 		if (count>=collectCount)
 		{
 			winTextObject.SetActive(true);
+			winText.text = collectCount.ToString() + " Objects have been collected! (There are " + collectNumber.ToString() 
+			+ " in total.)";
 			//restartButton.SetActive(true);
 		}
 	}
