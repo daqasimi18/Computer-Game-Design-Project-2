@@ -14232,7 +14232,7 @@ Terrain:
   m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 20
-  m_SplatMapDistance: 1000
+  m_SplatMapDistance: 400
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
